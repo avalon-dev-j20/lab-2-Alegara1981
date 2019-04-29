@@ -52,7 +52,7 @@ public class Task6 implements Task {
      * @return коллекция объектов типа {@link Country}
      * @throws IOException в случае ошибки ввода-вывода.
      */
-    private Collection<Country> read(File file) throws IOException, ParseException {
+    private Collection<Country> read(File file) throws IOException {
   
         List<Country> list = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(file))){

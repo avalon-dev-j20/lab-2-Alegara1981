@@ -61,11 +61,10 @@ public class Task1 implements Task {
     private String read(File file) throws IOException {
         InputStream fis = new FileInputStream(file);
         int data = fis.read();
-        String result = "";
         ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
         while(data != -1){
-            byteArray.write(data); // запись строки
-            data = fis.read(); // чтение следуещей строки
+            byteArray.write(data); // запись байта
+            data = fis.read(); // чтение следуещих байтов
         
     }
         fis.close();
