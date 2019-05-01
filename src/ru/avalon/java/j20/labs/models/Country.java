@@ -61,6 +61,32 @@ public class Country {
         /*
          * TODO(Студент): Реализовать метод valueOf класса Country
          */
-        throw new UnsupportedOperationException("Not implemented yet!");
+      String[] s;
+        if (text != null && text.contains(":")) {
+            s = text.split(":");
+        } else {
+            throw new ParseException("Invalid string", 0);
+        }
+ 
+        return new Country(s[0], s[1]);
+    }
+ 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+ 
+        Country country = (Country) o;
+ 
+        if (code != null ? !code.equals(country.code) : country.code != null) return false;
+        return name != null ? name.equals(country.name) : country.name == null;
+ 
+    }
+ 
+    @Override
+    public int hashCode() {
+        int result = code != null ? code.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
     }
 }
