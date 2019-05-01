@@ -61,7 +61,7 @@ public class Task6 implements Task {
                 list.add(country);
             }
         } catch (ParseException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
         return list;
  
